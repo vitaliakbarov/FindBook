@@ -1,0 +1,6 @@
+framework module Pods_FindBook {
+  umbrella header "Pods-FindBook-umbrella.h"
+
+  export *
+  module * { export * }
+}

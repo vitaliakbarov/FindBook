@@ -7,21 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0BA8701E10366F002C572E /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BA86F1E10366F002C572E /* AddBookViewController.swift */; };
+		BB0D9EAC1E1A623E0044BA09 /* SearchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0D9EAB1E1A623E0044BA09 /* SearchesTableViewCell.swift */; };
+		BB0E0DA31E096B2A00161944 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E0DA21E096B2A00161944 /* AppManager.swift */; };
+		BB0E0DA51E09726600161944 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0E0DA41E09726600161944 /* Bolts.framework */; };
+		BB0E0DA71E09727E00161944 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0E0DA61E09727E00161944 /* FBSDKCoreKit.framework */; };
+		BB0E0DA91E09729A00161944 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0E0DA81E09729A00161944 /* FBSDKLoginKit.framework */; };
+		BB0E0DAB1E09738000161944 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0E0DAA1E09738000161944 /* FBSDKShareKit.framework */; };
+		BB539BC91E0580CA00F4265E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB539BC81E0580CA00F4265E /* RegisterViewController.swift */; };
+		BB57B64E1E0454CC00B76C76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB57B64D1E0454CC00B76C76 /* Assets.xcassets */; };
+		BB6FAC301E0D7CF100914E70 /* GoToStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FAC2F1E0D7CF100914E70 /* GoToStoryboard.swift */; };
+		BB93BEA61E0568650055A3C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB93BEA51E0568650055A3C6 /* GoogleService-Info.plist */; };
+		BBB822B51E20F41C00F34808 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB822B41E20F41C00F34808 /* DetailsViewController.swift */; };
+		BBCE066C1E06F68B00E18D19 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE066B1E06F68B00E18D19 /* ForgotPasswordViewController.swift */; };
+		BBCE066E1E07018400E18D19 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE066D1E07018400E18D19 /* BaseViewController.swift */; };
+		BBCE06701E0706B300E18D19 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE066F1E0706B300E18D19 /* WelcomeViewController.swift */; };
+		BBCE06721E070F6300E18D19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE06711E070F6300E18D19 /* LoginViewController.swift */; };
+		BBDA63F91E0FE05D00537AED /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA63F81E0FE05D00537AED /* Book.swift */; };
+		BBDA64011E1007F800537AED /* MyBooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA64001E1007F800537AED /* MyBooksTableViewController.swift */; };
 		BBF0012F1E01986500F1B866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF0012E1E01986500F1B866 /* AppDelegate.swift */; };
-		BBF001311E01986500F1B866 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF001301E01986500F1B866 /* ViewController.swift */; };
 		BBF001341E01986500F1B866 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF001321E01986500F1B866 /* Main.storyboard */; };
-		BBF001361E01986500F1B866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF001351E01986500F1B866 /* Assets.xcassets */; };
 		BBF001391E01986500F1B866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF001371E01986500F1B866 /* LaunchScreen.storyboard */; };
+		BBF9BCD11E1D59F000951493 /* MyBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9BCD01E1D59F000951493 /* MyBooksTableViewCell.swift */; };
+		BBFC45E41E11377E0079C482 /* SearchedBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFC45E31E11377E0079C482 /* SearchedBooksViewController.swift */; };
+		C2D456947066620429C869EA /* Pods_FindBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A21D2585C827E18401E1EFB /* Pods_FindBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A21D2585C827E18401E1EFB /* Pods_FindBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B3F7D141F34C24048A3CD18 /* Pods-FindBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindBook/Pods-FindBook.release.xcconfig"; sourceTree = "<group>"; };
+		9B690DA4EBCD1D83663063D0 /* Pods-FindBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindBook/Pods-FindBook.debug.xcconfig"; sourceTree = "<group>"; };
+		BB0BA86F1E10366F002C572E /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
+		BB0D9EAB1E1A623E0044BA09 /* SearchesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchesTableViewCell.swift; sourceTree = "<group>"; };
+		BB0E0DA21E096B2A00161944 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		BB0E0DA41E09726600161944 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		BB0E0DA61E09727E00161944 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		BB0E0DA81E09729A00161944 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		BB0E0DAA1E09738000161944 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		BB0E0DAC1E0977E400161944 /* FindBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FindBook.entitlements; sourceTree = "<group>"; };
+		BB539BC81E0580CA00F4265E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BB57B64D1E0454CC00B76C76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets/Assets.xcassets; sourceTree = "<group>"; };
+		BB6FAC2F1E0D7CF100914E70 /* GoToStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoToStoryboard.swift; sourceTree = "<group>"; };
+		BB93BEA51E0568650055A3C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BBB822B41E20F41C00F34808 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		BBCE066B1E06F68B00E18D19 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		BBCE066D1E07018400E18D19 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BBCE066F1E0706B300E18D19 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		BBCE06711E070F6300E18D19 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BBDA63F81E0FE05D00537AED /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		BBDA64001E1007F800537AED /* MyBooksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksTableViewController.swift; sourceTree = "<group>"; };
 		BBF0012B1E01986500F1B866 /* FindBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF0012E1E01986500F1B866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBF001301E01986500F1B866 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBF001331E01986500F1B866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BBF001351E01986500F1B866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBF001381E01986500F1B866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBF0013A1E01986500F1B866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBF9BCD01E1D59F000951493 /* MyBooksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksTableViewCell.swift; sourceTree = "<group>"; };
+		BBFC45E31E11377E0079C482 /* SearchedBooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchedBooksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +70,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D456947066620429C869EA /* Pods_FindBook.framework in Frameworks */,
+				BB0E0DA71E09727E00161944 /* FBSDKCoreKit.framework in Frameworks */,
+				BB0E0DAB1E09738000161944 /* FBSDKShareKit.framework in Frameworks */,
+				BB0E0DA91E09729A00161944 /* FBSDKLoginKit.framework in Frameworks */,
+				BB0E0DA51E09726600161944 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B91F8CD9629A660673D9969C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB0E0DA41E09726600161944 /* Bolts.framework */,
+				0A21D2585C827E18401E1EFB /* Pods_FindBook.framework */,
+				BB0E0DAA1E09738000161944 /* FBSDKShareKit.framework */,
+				BB0E0DA81E09729A00161944 /* FBSDKLoginKit.framework */,
+				BB0E0DA61E09727E00161944 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB0E0DA11E096AF300161944 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB0E0DA21E096B2A00161944 /* AppManager.swift */,
+				BBF0012E1E01986500F1B866 /* AppDelegate.swift */,
+				BB6FAC2F1E0D7CF100914E70 /* GoToStoryboard.swift */,
+				BBDA63F81E0FE05D00537AED /* Book.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BBB822B31E20EB2500F34808 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BBCE066D1E07018400E18D19 /* BaseViewController.swift */,
+				BBCE066F1E0706B300E18D19 /* WelcomeViewController.swift */,
+				BBFC45E31E11377E0079C482 /* SearchedBooksViewController.swift */,
+				BBB822B41E20F41C00F34808 /* DetailsViewController.swift */,
+				BBDA64001E1007F800537AED /* MyBooksTableViewController.swift */,
+				BB0BA86F1E10366F002C572E /* AddBookViewController.swift */,
+				BBFC45E21E110E290079C482 /* ManageUser */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		BBF001221E01986500F1B866 = {
 			isa = PBXGroup;
 			children = (
 				BBF0012D1E01986500F1B866 /* FindBook */,
 				BBF0012C1E01986500F1B866 /* Products */,
+				DE7CA7FB6D38037C50248378 /* Pods */,
+				B91F8CD9629A660673D9969C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +139,45 @@
 		BBF0012D1E01986500F1B866 /* FindBook */ = {
 			isa = PBXGroup;
 			children = (
-				BBF0012E1E01986500F1B866 /* AppDelegate.swift */,
-				BBF001301E01986500F1B866 /* ViewController.swift */,
+				BBB822B31E20EB2500F34808 /* Controllers */,
+				BBFC45E11E110DF60079C482 /* View */,
+				BB0E0DA11E096AF300161944 /* Model */,
 				BBF001321E01986500F1B866 /* Main.storyboard */,
-				BBF001351E01986500F1B866 /* Assets.xcassets */,
+				BB57B64D1E0454CC00B76C76 /* Assets.xcassets */,
 				BBF001371E01986500F1B866 /* LaunchScreen.storyboard */,
 				BBF0013A1E01986500F1B866 /* Info.plist */,
+				BB93BEA51E0568650055A3C6 /* GoogleService-Info.plist */,
+				BB0E0DAC1E0977E400161944 /* FindBook.entitlements */,
 			);
 			path = FindBook;
+			sourceTree = "<group>";
+		};
+		BBFC45E11E110DF60079C482 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB0D9EAB1E1A623E0044BA09 /* SearchesTableViewCell.swift */,
+				BBF9BCD01E1D59F000951493 /* MyBooksTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BBFC45E21E110E290079C482 /* ManageUser */ = {
+			isa = PBXGroup;
+			children = (
+				BBCE06711E070F6300E18D19 /* LoginViewController.swift */,
+				BB539BC81E0580CA00F4265E /* RegisterViewController.swift */,
+				BBCE066B1E06F68B00E18D19 /* ForgotPasswordViewController.swift */,
+			);
+			name = ManageUser;
+			sourceTree = "<group>";
+		};
+		DE7CA7FB6D38037C50248378 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B690DA4EBCD1D83663063D0 /* Pods-FindBook.debug.xcconfig */,
+				1B3F7D141F34C24048A3CD18 /* Pods-FindBook.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBF0013D1E01986500F1B866 /* Build configuration list for PBXNativeTarget "FindBook" */;
 			buildPhases = (
+				D94E023414CE2F47564EF793 /* [CP] Check Pods Manifest.lock */,
 				BBF001271E01986500F1B866 /* Sources */,
 				BBF001281E01986500F1B866 /* Frameworks */,
 				BBF001291E01986500F1B866 /* Resources */,
+				A23861E38FCE1217350B6559 /* [CP] Embed Pods Frameworks */,
+				054AA39F7C29653D8A8985E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +215,13 @@
 				TargetAttributes = {
 					BBF0012A1E01986500F1B866 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = JF9NRVJ9PY;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -124,20 +249,82 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBF001391E01986500F1B866 /* LaunchScreen.storyboard in Resources */,
-				BBF001361E01986500F1B866 /* Assets.xcassets in Resources */,
+				BB93BEA61E0568650055A3C6 /* GoogleService-Info.plist in Resources */,
+				BB57B64E1E0454CC00B76C76 /* Assets.xcassets in Resources */,
 				BBF001341E01986500F1B866 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		054AA39F7C29653D8A8985E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindBook/Pods-FindBook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A23861E38FCE1217350B6559 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FindBook/Pods-FindBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D94E023414CE2F47564EF793 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BBF001271E01986500F1B866 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBF001311E01986500F1B866 /* ViewController.swift in Sources */,
+				BBCE06721E070F6300E18D19 /* LoginViewController.swift in Sources */,
+				BB6FAC301E0D7CF100914E70 /* GoToStoryboard.swift in Sources */,
+				BBCE066E1E07018400E18D19 /* BaseViewController.swift in Sources */,
+				BB0BA8701E10366F002C572E /* AddBookViewController.swift in Sources */,
+				BBDA63F91E0FE05D00537AED /* Book.swift in Sources */,
+				BBCE066C1E06F68B00E18D19 /* ForgotPasswordViewController.swift in Sources */,
+				BB539BC91E0580CA00F4265E /* RegisterViewController.swift in Sources */,
+				BB0D9EAC1E1A623E0044BA09 /* SearchesTableViewCell.swift in Sources */,
+				BBF9BCD11E1D59F000951493 /* MyBooksTableViewCell.swift in Sources */,
 				BBF0012F1E01986500F1B866 /* AppDelegate.swift in Sources */,
+				BBFC45E41E11377E0079C482 /* SearchedBooksViewController.swift in Sources */,
+				BBCE06701E0706B300E18D19 /* WelcomeViewController.swift in Sources */,
+				BBDA64011E1007F800537AED /* MyBooksTableViewController.swift in Sources */,
+				BB0E0DA31E096B2A00161944 /* AppManager.swift in Sources */,
+				BBB822B51E20F41C00F34808 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,25 +445,43 @@
 		};
 		BBF0013E1E01986500F1B866 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B690DA4EBCD1D83663063D0 /* Pods-FindBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FindBook/FindBook.entitlements;
+				DEVELOPMENT_TEAM = JF9NRVJ9PY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FindBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vitali.FindBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BBF0013F1E01986500F1B866 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B3F7D141F34C24048A3CD18 /* Pods-FindBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FindBook/FindBook.entitlements;
+				DEVELOPMENT_TEAM = JF9NRVJ9PY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FindBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vitali.FindBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -299,6 +504,7 @@
 				BBF0013F1E01986500F1B866 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

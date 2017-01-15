@@ -27,15 +27,17 @@ class DetailsViewController: UIViewController {
     }
     
     // NOT WORKING ON SIMULATOR this is the call action
-    /*
+    
      @IBAction func callToSeller(_ sender: UITapGestureRecognizer) {
-     let phone : String = "0547661646"
      
-     if let url = NSURL(string: "tel://\(book.phone)"), UIApplication.shared.canOpenURL(url as URL) {
-     UIApplication.shared.openURL(url as URL)
-     }    }
+        print("tap")
+        
+        guard let number = URL(string: "telprompt://" + book.phone!) else { return }
+        UIApplication.shared.open(number, options: [:], completionHandler: nil)
+
+  }
      
-     */
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         initBook()

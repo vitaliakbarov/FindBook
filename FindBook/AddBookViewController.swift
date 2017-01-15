@@ -54,13 +54,19 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
     }
     // add new book for sell and save the book in DB
     func addNewBook()  {
+        
+        //   DispatchQueue.main.async {
+        print("main")
         let imageName = NSUUID().uuidString
         let unicBookId = NSUUID().uuidString
-        let storageRef = FIRStorage.storage().reference().child("bookImages").child(uid!).child("\(imageName).png")
+        let storageRef = FIRStorage.storage().reference().child("bookImages").child(self.uid!).child("\(imageName).png")
         
         if let uploadData = UIImagePNGRepresentation(self.fotoImageView.image!){
+            print(uploadData)
+            print("upload data")
             
             storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                print("put")
                 
                 if error != nil{
                     AppManager.appManager.showAlert(title: "Error", massage: (error?.localizedDescription)!, viewController: self)
@@ -69,8 +75,11 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
                 
                 if let imgUrl = metadata?.downloadURL()?.absoluteString{
                     AppManager.appManager.addBook(name: self.name!, price: self.price!, uid: self.uid!, janer: self.genre, imgUrl: imgUrl, unicBookId: unicBookId, phone: self.phoneNumber!)
+                    print("added")
                 }
             })
+                     //   }
+            
         }
     }
     // get user phone number prom DB to save the contact phohe
@@ -89,31 +98,81 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
         
     }
     
-    // handle the image that choosed
-    func handle(asset : DKAsset){
-        let imageSize : CGSize = CGSize.init(width: 84, height: 84)
-        
-        asset.fetchImageWithSize(imageSize, completeBlock: { (image, _) in
-            if let image = image{
-                self.fotoImageView.image = image
-            }
-        })
-    }
     
     // open the image picker app with DKImagePicker
     @IBAction func addPhoto(_ sender: UITapGestureRecognizer) {
         
         let pickerController = DKImagePickerController()
         pickerController.maxSelectableCount = 1
-        pickerController.didSelectAssets = { assets in //[DKAssets]
-            for item in assets{
-                self.handle(asset: item)
+        pickerController.singleSelect = true
+        let imageSize : CGSize = CGSize.init(width: 84, height: 84)
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            print("didSelectAssets")
+            print(assets)
+            for asset in assets {
+                
+              //  asset.fetchImageWithSize(imageSize, completeBlock: { (image, info) in
+                  
+              //      self.fotoImageView.image = image
+             //   })
+                
+                asset.fetchOriginalImage(true, completeBlock: { (image, info) in
+               let newImage = self.resizeImage(image: image!)
+                    self.fotoImageView.image = newImage
+                })
+                
             }
+            
         }
-        present(pickerController, animated: true, completion: nil)
         
+        self.present(pickerController, animated: true) {}
     }
     
+   //resize image to smaller one , make faster upload to DB
+    func resizeImage(image:UIImage) -> UIImage
+    {
+        var actualHeight:Float = Float(image.size.height)
+        var actualWidth:Float = Float(image.size.width)
+        
+        let maxHeight:Float = 84.0 //your choose height
+        let maxWidth:Float = 84.0  //your choose width
+        
+        var imgRatio:Float = actualWidth/actualHeight
+        let maxRatio:Float = maxWidth/maxHeight
+        
+        if (actualHeight > maxHeight) || (actualWidth > maxWidth)
+        {
+            if(imgRatio < maxRatio)
+            {
+                imgRatio = maxHeight / actualHeight;
+                actualWidth = imgRatio * actualWidth;
+                actualHeight = maxHeight;
+            }
+            else if(imgRatio > maxRatio)
+            {
+                imgRatio = maxWidth / actualWidth;
+                actualHeight = imgRatio * actualHeight;
+                actualWidth = maxWidth;
+            }
+            else
+            {
+                actualHeight = maxHeight;
+                actualWidth = maxWidth;
+            }
+        }
+         let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 84, height: 84))
+        //let rect:CGRect = CGRect(0.0, 0.0, CGFloat(actualWidth) , CGFloat(actualHeight) )
+        UIGraphicsBeginImageContext(rect.size)
+        image.draw(in: rect)
+        
+        let img:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let imageData:NSData = UIImageJPEGRepresentation(img, 1.0)! as NSData
+        UIGraphicsEndImageContext()
+        
+        return UIImage(data: imageData as Data)!
+    }
+    
+    //////////////////
     
     // close the current view
     @IBAction func backToMyBooks(_ sender: Any) {
@@ -126,6 +185,7 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
         pickerData = AppManager.appManager.getPickerData()
         picker.selectRow(18 * 15, inComponent: 0, animated: true)
         self.pickerView(picker, didSelectRow: 0, inComponent: 0)
+        genre = pickerData[0]
         
         // user choose to edit the book
         if book != nil {
@@ -177,7 +237,23 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        return true;
+        if textField == bookNameTextField { // Switch focus to other text field
+            priceTextField.becomeFirstResponder()
+        }
+        if textField == priceTextField { // Switch focus to other text field
+            textField.resignFirstResponder()
+        }
+        
+        return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == priceTextField{
+            let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+            return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
+        }
+        return true
+    }
+    
     
 }

@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
@@ -29,6 +31,11 @@ class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     // logout user
     @IBAction func logout(_ sender: UITapGestureRecognizer) {
+        
+        FBSDKAccessToken.current()
+        
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
         
         let firebaseAuth = FIRAuth.auth()
         do {

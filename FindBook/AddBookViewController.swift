@@ -105,7 +105,6 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
         let pickerController = DKImagePickerController()
         pickerController.maxSelectableCount = 1
         pickerController.singleSelect = true
-        let imageSize : CGSize = CGSize.init(width: 84, height: 84)
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
             print("didSelectAssets")
             print(assets)
@@ -161,7 +160,7 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
             }
         }
          let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 84, height: 84))
-        //let rect:CGRect = CGRect(0.0, 0.0, CGFloat(actualWidth) , CGFloat(actualHeight) )
+      
         UIGraphicsBeginImageContext(rect.size)
         image.draw(in: rect)
         

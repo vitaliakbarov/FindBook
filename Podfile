@@ -16,6 +16,7 @@ pod 'FacebookLogin'
 pod 'FacebookShare'
 pod 'DKImagePickerController'
 pod 'SDWebImage', '~>3.8'
+pod 'Toast', '~> 3.0'
 
 
 end

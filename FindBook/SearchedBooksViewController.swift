@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import Toast
 
 class SearchedBooksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -64,7 +65,8 @@ class SearchedBooksViewController: UIViewController, UITableViewDelegate, UITabl
         ref = FIRDatabase.database().reference().child("books")
         ref.queryOrdered(byChild: "janer").queryEqual(toValue: genre).observe(.value, with: { snapshot in
             if snapshot.value is NSNull {
-                AppManager.appManager.showAlert(title: "Empty", massage: "No Books found", viewController: self)
+                self.view.makeToast("No Books found", duration: 3, position: CSToastPositionCenter)
+               
             } else {
                 
                 for childSnap in snapshot.children.allObjects as! [FIRDataSnapshot]{

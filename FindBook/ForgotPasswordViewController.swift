@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Toast
 
 class ForgotPasswordViewController: UIViewController , UITextFieldDelegate{
     
@@ -34,16 +35,15 @@ class ForgotPasswordViewController: UIViewController , UITextFieldDelegate{
         email = emailField.text
         
         if (email?.isEmpty)! {
-            
-            AppManager.appManager.showAlert(title: "Error", massage: "Enter Email", viewController: self)
+            self.view.makeToast("Enter Email", duration: 3, position: CSToastPositionCenter)
             return
         }else{
             
             FIRAuth.auth()?.sendPasswordReset(withEmail: email!) { (error) in
-                AppManager.appManager.showAlert(title: "Error", massage: (error?.localizedDescription)!, viewController: self)
+                self.view.makeToast(error?.localizedDescription, duration: 3, position: CSToastPositionCenter)
+               
             }
-            AppManager.appManager.showAlert(title: "Sent", massage: "Reset password was sent to your mail.", viewController: self)
-            
+            self.view.makeToast("Reset password was sent to your mail.", duration: 3, position: CSToastPositionCenter)
         }
     }
     

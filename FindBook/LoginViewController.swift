@@ -12,6 +12,7 @@ import FirebaseAuth
 import FacebookLogin
 import FacebookCore
 import FBSDKCoreKit
+import Toast
 
 
 
@@ -46,7 +47,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDele
         view.endEditing(true)
     }
     
-   
+    
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         if AccessToken.current == nil{
@@ -61,8 +62,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDele
                 UIApplication.shared.delegate?.window??.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "logged")
                 
                 if let error = error {
+                    self.view.makeToast(error.localizedDescription, duration: 3, position: CSToastPositionCenter)
                     
-                    AppManager.appManager.showAlert(title: "Error", massage: error as! String, viewController: self)
                     return
                 }
             }
@@ -83,8 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDele
             FIRAuth.auth()?.signIn(withEmail: email!, password: password!) { (user, error) in
                 
                 if error != nil{
-                    AppManager.appManager.showAlert(title: "Error", massage: (error?.localizedDescription)!, viewController: self)
-                    
+                    self.view.makeToast(error?.localizedDescription, duration: 3, position: CSToastPositionCenter)
                 }else{
                     
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -104,7 +104,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDele
     
     func validate() -> Bool{
         if (email?.isEmpty)! || (password?.isEmpty)!{
-            AppManager.appManager.showAlert(title: "Empty", massage: "text fields are empty", viewController: self)
+            self.view.makeToast("Text fields are empty", duration: 3, position: CSToastPositionCenter)
+            
             return false
         }else{
             

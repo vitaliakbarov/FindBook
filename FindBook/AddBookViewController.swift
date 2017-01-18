@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import DKImagePickerController
+import Toast
 
 class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     
@@ -36,7 +37,8 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
         name = bookNameTextField.text
         price = priceTextField.text
         if (name?.isEmpty)! || (price?.isEmpty)!{
-            AppManager.appManager.showAlert(title: "Empty", massage: "Empty fields", viewController: self)
+            self.view.makeToast("Empty fields", duration: 3, position: CSToastPositionCenter)
+            
             return
         }
         getUserPhone()
@@ -61,6 +63,7 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
         let unicBookId = NSUUID().uuidString
         let storageRef = FIRStorage.storage().reference().child("bookImages").child(self.uid!).child("\(imageName).png")
         
+        // get the picked image and upload this foto to DB 
         if let uploadData = UIImagePNGRepresentation(self.fotoImageView.image!){
             print(uploadData)
             print("upload data")
@@ -69,7 +72,7 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
                 print("put")
                 
                 if error != nil{
-                    AppManager.appManager.showAlert(title: "Error", massage: (error?.localizedDescription)!, viewController: self)
+                    self.view.makeToast(error?.localizedDescription, duration: 4, position: CSToastPositionCenter)
                     return
                 }
                 
@@ -78,8 +81,6 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
                     print("added")
                 }
             })
-                     //   }
-            
         }
     }
     // get user phone number prom DB to save the contact phohe
@@ -101,7 +102,7 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
     
     // open the image picker app with DKImagePicker
     @IBAction func addPhoto(_ sender: UITapGestureRecognizer) {
-        
+        var newImage : UIImage?
         let pickerController = DKImagePickerController()
         pickerController.maxSelectableCount = 1
         pickerController.singleSelect = true
@@ -110,13 +111,9 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
             print(assets)
             for asset in assets {
                 
-              //  asset.fetchImageWithSize(imageSize, completeBlock: { (image, info) in
-                  
-              //      self.fotoImageView.image = image
-             //   })
-                
                 asset.fetchOriginalImage(true, completeBlock: { (image, info) in
-               let newImage = self.resizeImage(image: image!)
+                    // resize the image
+                    newImage = UIImage.resizeImage(image: image!)
                     self.fotoImageView.image = newImage
                 })
                 
@@ -126,54 +123,7 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
         
         self.present(pickerController, animated: true) {}
     }
-    
-   //resize image to smaller one , make faster upload to DB
-    func resizeImage(image:UIImage) -> UIImage
-    {
-        var actualHeight:Float = Float(image.size.height)
-        var actualWidth:Float = Float(image.size.width)
-        
-        let maxHeight:Float = 84.0 //your choose height
-        let maxWidth:Float = 84.0  //your choose width
-        
-        var imgRatio:Float = actualWidth/actualHeight
-        let maxRatio:Float = maxWidth/maxHeight
-        
-        if (actualHeight > maxHeight) || (actualWidth > maxWidth)
-        {
-            if(imgRatio < maxRatio)
-            {
-                imgRatio = maxHeight / actualHeight;
-                actualWidth = imgRatio * actualWidth;
-                actualHeight = maxHeight;
-            }
-            else if(imgRatio > maxRatio)
-            {
-                imgRatio = maxWidth / actualWidth;
-                actualHeight = imgRatio * actualHeight;
-                actualWidth = maxWidth;
-            }
-            else
-            {
-                actualHeight = maxHeight;
-                actualWidth = maxWidth;
-            }
-        }
-         let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 84, height: 84))
-      
-        UIGraphicsBeginImageContext(rect.size)
-        image.draw(in: rect)
-        
-        let img:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        let imageData:NSData = UIImageJPEGRepresentation(img, 1.0)! as NSData
-        UIGraphicsEndImageContext()
-        
-        return UIImage(data: imageData as Data)!
-    }
-    
-    //////////////////
-    
-    // close the current view
+       // close the current view
     @IBAction func backToMyBooks(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

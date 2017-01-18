@@ -55,15 +55,7 @@ class AppManager: NSObject{
         ref.child("books").child(unicBookId).setValue(["bookName": name, "price": price,  "userId": uid, "janer": janer, "imgUrl": imgUrl, "unicBookId": unicBookId, "phone": phone])
     }
     
-    // Showing allert
-    func showAlert(title: String, massage: String, viewController : UIViewController) {
-        
-        let alert = UIAlertController(title: title, message: massage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        viewController.present(alert, animated: true, completion: nil)
-        
-    }
-    
+     
     // returning picker data
     
     func getPickerData() -> [String] {

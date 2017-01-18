@@ -74,7 +74,7 @@ class MyBooksTableViewController: UIViewController , UITableViewDataSource, UITa
         
         ref.queryOrdered(byChild: "userId").queryEqual(toValue: myUid).observe(.value, with: { snapshot in
             if snapshot.value is NSNull {
-                AppManager.appManager.showAlert(title: "Empty", massage: "No Books found", viewController: self)
+               
             } else {
                 self.booksArray = []
                 for childSnap in snapshot.children.allObjects as! [FIRDataSnapshot]{

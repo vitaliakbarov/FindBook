@@ -79,6 +79,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - Toast (3.1.0)
 
 DEPENDENCIES:
   - DKImagePickerController
@@ -91,6 +92,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - SDWebImage (~> 3.8)
+  - Toast (~> 3.0)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -113,7 +115,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
 
-PODFILE CHECKSUM: 546d1edbd72c754373754ea3d4b063510f7ff804
+PODFILE CHECKSUM: 2039fba291fdcb3f34fc618f8809eacb1d4a329a
 
 COCOAPODS: 1.1.1

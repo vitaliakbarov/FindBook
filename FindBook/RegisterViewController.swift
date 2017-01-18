@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import Toast
 
 class RegisterViewController: UIViewController , UITextFieldDelegate{
     
@@ -48,10 +49,9 @@ class RegisterViewController: UIViewController , UITextFieldDelegate{
             FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
                 
                 if error != nil {
-                    AppManager.appManager.showAlert(title: "Error", massage: (error?.localizedDescription)!, viewController: self)
-             //       print(error?.localizedDescription)
+                    self.view.makeToast(error?.localizedDescription, duration: 3, position: CSToastPositionCenter)
+                   
                 }else{
-               //     print("User created...")
                     self.id = FIRAuth.auth()?.currentUser?.uid
                     AppManager.appManager.registerWith(phone: self.phone!, name: self.name!, uid: self.id!, email: self.email!)
                     
@@ -60,7 +60,8 @@ class RegisterViewController: UIViewController , UITextFieldDelegate{
                 }
             })
         }else{
-            AppManager.appManager.showAlert(title: "Faild", massage: "Empty fields or bad confirmatiom", viewController: self)
+              self.view.makeToast("Empty fields or bad confirmatiom", duration: 3, position: CSToastPositionCenter)
+            
         }
         
     }

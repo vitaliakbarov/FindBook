@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB0BA8701E10366F002C572E /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BA86F1E10366F002C572E /* AddBookViewController.swift */; };
+		BB0CA7481E2F61BC0047E0E9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0CA7471E2F61BC0047E0E9 /* Utils.swift */; };
 		BB0D9EAC1E1A623E0044BA09 /* SearchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0D9EAB1E1A623E0044BA09 /* SearchesTableViewCell.swift */; };
 		BB0E0DA31E096B2A00161944 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E0DA21E096B2A00161944 /* AppManager.swift */; };
 		BB0E0DA51E09726600161944 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0E0DA41E09726600161944 /* Bolts.framework */; };
@@ -38,6 +39,7 @@
 		1B3F7D141F34C24048A3CD18 /* Pods-FindBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindBook/Pods-FindBook.release.xcconfig"; sourceTree = "<group>"; };
 		9B690DA4EBCD1D83663063D0 /* Pods-FindBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindBook/Pods-FindBook.debug.xcconfig"; sourceTree = "<group>"; };
 		BB0BA86F1E10366F002C572E /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
+		BB0CA7471E2F61BC0047E0E9 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BB0D9EAB1E1A623E0044BA09 /* SearchesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchesTableViewCell.swift; sourceTree = "<group>"; };
 		BB0E0DA21E096B2A00161944 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		BB0E0DA41E09726600161944 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -98,8 +100,8 @@
 			children = (
 				BB0E0DA21E096B2A00161944 /* AppManager.swift */,
 				BBF0012E1E01986500F1B866 /* AppDelegate.swift */,
-				BB6FAC2F1E0D7CF100914E70 /* GoToStoryboard.swift */,
 				BBDA63F81E0FE05D00537AED /* Book.swift */,
+				BB0CA7471E2F61BC0047E0E9 /* Utils.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -113,6 +115,7 @@
 				BBB822B41E20F41C00F34808 /* DetailsViewController.swift */,
 				BBDA64001E1007F800537AED /* MyBooksTableViewController.swift */,
 				BB0BA86F1E10366F002C572E /* AddBookViewController.swift */,
+				BB6FAC2F1E0D7CF100914E70 /* GoToStoryboard.swift */,
 				BBFC45E21E110E290079C482 /* ManageUser */,
 			);
 			name = Controllers;
@@ -317,6 +320,7 @@
 				BBDA63F91E0FE05D00537AED /* Book.swift in Sources */,
 				BBCE066C1E06F68B00E18D19 /* ForgotPasswordViewController.swift in Sources */,
 				BB539BC91E0580CA00F4265E /* RegisterViewController.swift in Sources */,
+				BB0CA7481E2F61BC0047E0E9 /* Utils.swift in Sources */,
 				BB0D9EAC1E1A623E0044BA09 /* SearchesTableViewCell.swift in Sources */,
 				BBF9BCD11E1D59F000951493 /* MyBooksTableViewCell.swift in Sources */,
 				BBF0012F1E01986500F1B866 /* AppDelegate.swift in Sources */,

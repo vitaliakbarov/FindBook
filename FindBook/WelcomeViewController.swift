@@ -11,6 +11,8 @@ import Firebase
 import FirebaseDatabase
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Toast
+
 
 class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
@@ -28,6 +30,8 @@ class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         pickerData = AppManager.appManager.getPickerData()
         self.pickerView(picker, didSelectRow: 0, inComponent: 0)
         picker.selectRow(18 * 15, inComponent: 0, animated: true)
+          //self.view.makeToast("hi", duration: 3, position: CSToastPositionCenter)
+        
     }
     // logout user
     @IBAction func logout(_ sender: UITapGestureRecognizer) {
@@ -43,11 +47,15 @@ class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
              GoToStoryboard.storyboard.goTo(identifier: "main", viewController: self)
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
-             AppManager.appManager.showAlert(title: "Error", massage: (signOutError.localizedDescription), viewController: self)
+            self.view.makeToast(signOutError.localizedDescription, duration: 4, position: CSToastPositionCenter)
+            
         }
     }
     
     @IBAction func searchForBooks(_ sender: Any) {
+        
+        
+        self.view.makeToast("hi", duration: 2, position: CSToastPositionTop)
     }
     
     

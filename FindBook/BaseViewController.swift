@@ -25,12 +25,12 @@ class BaseViewController: UIViewController {
             // User is signed in.
             print("signed in")
             
-            GoToStoryboard.storyboard.goTo(identifier: "logged", viewController: self)
+            GoToStoryboard.storyboard.goTo(identifier: Constants.loggedIdentifier, viewController: self)
             
         } else {
             // No user is signed in.
             
-            GoToStoryboard.storyboard.goTo(identifier: "main", viewController: self)
+            GoToStoryboard.storyboard.goTo(identifier: Constants.mainIdentifier, viewController: self)
         }
         
     }

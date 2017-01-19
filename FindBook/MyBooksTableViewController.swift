@@ -35,7 +35,7 @@ class MyBooksTableViewController: UIViewController , UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myBooksCell", for: indexPath) as! MyBooksTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.myBooksCellIdentifier, for: indexPath) as! MyBooksTableViewCell
         let book = booksArray[indexPath.row]
         cell.configure(name: book.bookName!, price: book.price!, url: book.image!, genre: book.genre!)
         
@@ -63,29 +63,22 @@ class MyBooksTableViewController: UIViewController , UITableViewDataSource, UITa
         let bookIdToRemove = book.bookId
         booksArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
-        ref = FIRDatabase.database().reference().child("books")
+        ref = FIRDatabase.database().reference().child(Constants.books)
         ref.child(bookIdToRemove!).removeValue()
     }
     
     func searchBook(){
         var ref: FIRDatabaseReference!
         
-        ref = FIRDatabase.database().reference().child("books")
+        ref = FIRDatabase.database().reference().child(Constants.books)
         
-        ref.queryOrdered(byChild: "userId").queryEqual(toValue: myUid).observe(.value, with: { snapshot in
+        ref.queryOrdered(byChild: Constants.userId).queryEqual(toValue: myUid).observe(.value, with: { snapshot in
             if snapshot.value is NSNull {
                
             } else {
                 self.booksArray = []
                 for childSnap in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                    
-                    let name = childSnap.childSnapshot(forPath: "bookName").value as? String
-                    let price = childSnap.childSnapshot(forPath: "price").value as? String
-                    let imageUrl = childSnap.childSnapshot(forPath: "imgUrl").value as? String
-                    let genre = childSnap.childSnapshot(forPath: "janer").value as? String
-                    let phone = childSnap.childSnapshot(forPath: "phone").value as? String
-                    let unicId = childSnap.childSnapshot(forPath: "unicBookId").value as? String
-                    let book = Book(bookkkName: name, prisee: price, urlString: imageUrl, genree: genre, phonee: phone, unicID: unicId!)
+                    let book = Book(snapshot: childSnap)
                     self.booksArray.append(book)
                     self.tableView.reloadData()
                     
@@ -102,7 +95,7 @@ class MyBooksTableViewController: UIViewController , UITableViewDataSource, UITa
             return
         }
         switch identifier {
-        case "editBookSegue":
+        case Constants.editBookSegue:
             guard let cell = sender as? UITableViewCell,
                 let indexPath = self.tableView.indexPath(for: cell)
                 else {

@@ -25,11 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if AccessToken.current != nil{
             //show Main Storyboard
-            print("main")
-            window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "logged")
+            //print("main")
+            window?.rootViewController = UIStoryboard(name: Constants.Main, bundle: nil).instantiateViewController(withIdentifier: Constants.loggedIdentifier)
                    } else {
             //show Login Storyboard
-            print("login")
+           // print("login")
         }
         return true
     }

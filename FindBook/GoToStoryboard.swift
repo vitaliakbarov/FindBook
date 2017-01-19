@@ -16,7 +16,7 @@ class GoToStoryboard: NSObject {
     
     func goTo(identifier: String, viewController : UIViewController) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: Constants.Main, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: identifier)
         viewController.present(controller, animated: true, completion: nil)
         

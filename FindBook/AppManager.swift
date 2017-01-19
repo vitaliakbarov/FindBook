@@ -40,7 +40,7 @@ class AppManager: NSObject{
         
         ref = FIRDatabase.database().reference()
         
-        ref.child("users").child(uid).setValue(["username": name, "email": email, "phone": phone, "id": uid])
+        ref.child(Constants.users).child(uid).setValue([Constants.username: name, Constants.email: email, Constants.phone: phone, Constants.id: uid])
         
     }
     
@@ -52,18 +52,38 @@ class AppManager: NSObject{
         
         ref = FIRDatabase.database().reference()
         
-        ref.child("books").child(unicBookId).setValue(["bookName": name, "price": price,  "userId": uid, "janer": janer, "imgUrl": imgUrl, "unicBookId": unicBookId, "phone": phone])
+        ref.child(Constants.books).child(unicBookId).setValue([Constants.bookName: name, Constants.price: price,  Constants.userId: uid, Constants.janer: janer, Constants.imgUrl: imgUrl, Constants.unicBookId: unicBookId, Constants.phone: phone])
     }
     
      
     // returning picker data
     
     func getPickerData() -> [String] {
-      let pickerData = ["אוטוביוגרפיה" , "בישול" , "דרמה" , "הומור" , "היסטוריה" , "טיולים" , "יהדות" , "לימוד" , "מדע בדיוני" , "מחשבים" ,
-                      "פילוסופיה" , "פנטזיה" , "פסיכולוגיה" , "רומן" , "שירה" , "מתח" , "תזונה" , "הרפתקאות"]
-        
-        return pickerData
+        var myArray: [String] = []
+        if let URL = Bundle.main.url(forResource: "PickerDataList", withExtension: "plist") {
+            if let genresFromPlist = NSArray(contentsOf: URL) as? [String] {
+                for myGenres in genresFromPlist {
+                    myArray.append(myGenres)
+                }
+            }
+        }
+       // print(myArray)
+        return myArray
     }
     
-}
+    // make price with number formater
+    func numberFormater(st : String) -> String {
+        var price : NSNumber?
+        if let myInteger = Int(st) {
+            price = NSNumber(value:myInteger)
+            //price = myNumber
+        }
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "he_IL")
+        return formatter.string(from: price!)!
+    }
+
+
+  }
 

@@ -17,11 +17,13 @@ class MyBooksTableViewCell: UITableViewCell {
     @IBOutlet weak var bookPriceLable: UILabel!
     @IBOutlet weak var bookGenre: UILabel!
     
-    static let identifier = "myBooksCell"
+    static let identifier = Constants.myBooksCellIdentifier
     // configure the cell
     func configure(name: String, price: String, url: URL, genre: String){
+        let formatedPrice =  AppManager.appManager.numberFormater(st: price)
         bookNameLable.text = name
-        bookPriceLable.text = "מחיר: " + price + " " + "שח"
+        //bookPriceLable.text = "מחיר: " + price + " " + "שח"
+        bookPriceLable.text = "מחיר: " + formatedPrice
         bookGenre.text = genre
         bookImageView.sd_setImage(with: url)
         
@@ -38,5 +40,4 @@ class MyBooksTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
-}
+ }

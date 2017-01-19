@@ -15,6 +15,8 @@
 		BB0E0DA71E09727E00161944 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0E0DA61E09727E00161944 /* FBSDKCoreKit.framework */; };
 		BB0E0DA91E09729A00161944 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0E0DA81E09729A00161944 /* FBSDKLoginKit.framework */; };
 		BB0E0DAB1E09738000161944 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0E0DAA1E09738000161944 /* FBSDKShareKit.framework */; };
+		BB218A5F1E30BAD200AE2F40 /* PickerDataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB218A5E1E30BAD200AE2F40 /* PickerDataList.plist */; };
+		BB218A611E30CADD00AE2F40 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB218A601E30CADD00AE2F40 /* Constants.swift */; };
 		BB539BC91E0580CA00F4265E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB539BC81E0580CA00F4265E /* RegisterViewController.swift */; };
 		BB57B64E1E0454CC00B76C76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB57B64D1E0454CC00B76C76 /* Assets.xcassets */; };
 		BB6FAC301E0D7CF100914E70 /* GoToStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FAC2F1E0D7CF100914E70 /* GoToStoryboard.swift */; };
@@ -47,6 +49,8 @@
 		BB0E0DA81E09729A00161944 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		BB0E0DAA1E09738000161944 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		BB0E0DAC1E0977E400161944 /* FindBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FindBook.entitlements; sourceTree = "<group>"; };
+		BB218A5E1E30BAD200AE2F40 /* PickerDataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PickerDataList.plist; sourceTree = "<group>"; };
+		BB218A601E30CADD00AE2F40 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BB539BC81E0580CA00F4265E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BB57B64D1E0454CC00B76C76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets/Assets.xcassets; sourceTree = "<group>"; };
 		BB6FAC2F1E0D7CF100914E70 /* GoToStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoToStoryboard.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				BBF0012E1E01986500F1B866 /* AppDelegate.swift */,
 				BBDA63F81E0FE05D00537AED /* Book.swift */,
 				BB0CA7471E2F61BC0047E0E9 /* Utils.swift */,
+				BB218A5E1E30BAD200AE2F40 /* PickerDataList.plist */,
+				BB218A601E30CADD00AE2F40 /* Constants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 				BB93BEA61E0568650055A3C6 /* GoogleService-Info.plist in Resources */,
 				BB57B64E1E0454CC00B76C76 /* Assets.xcassets in Resources */,
 				BBF001341E01986500F1B866 /* Main.storyboard in Resources */,
+				BB218A5F1E30BAD200AE2F40 /* PickerDataList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBCE06721E070F6300E18D19 /* LoginViewController.swift in Sources */,
+				BB218A611E30CADD00AE2F40 /* Constants.swift in Sources */,
 				BB6FAC301E0D7CF100914E70 /* GoToStoryboard.swift in Sources */,
 				BBCE066E1E07018400E18D19 /* BaseViewController.swift in Sources */,
 				BB0BA8701E10366F002C572E /* AddBookViewController.swift in Sources */,

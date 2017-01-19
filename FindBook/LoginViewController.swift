@@ -51,15 +51,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDele
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         if AccessToken.current == nil{
-            print("not logged in")
+           // print("not logged in")
             
         } else {
-            print("logged in")
+          //  print("logged in")
             let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             
             
             FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-                UIApplication.shared.delegate?.window??.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "logged")
+                UIApplication.shared.delegate?.window??.rootViewController = UIStoryboard(name: Constants.Main, bundle: nil).instantiateViewController(withIdentifier: Constants.loggedIdentifier)
                 
                 if let error = error {
                     self.view.makeToast(error.localizedDescription, duration: 3, position: CSToastPositionCenter)
@@ -87,8 +87,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate,LoginButtonDele
                     self.view.makeToast(error?.localizedDescription, duration: 3, position: CSToastPositionCenter)
                 }else{
                     
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "logged")
+                    let storyboard = UIStoryboard(name: Constants.Main, bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: Constants.loggedIdentifier)
                     self.present(controller, animated: true, completion: nil)
                     // ...
                 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>אוטוביוגרפיה</string>
+	<string>בישול</string>
+	<string>דרמה</string>
+	<string>הומור</string>
+	<string>היסטוריה</string>
+	<string>טיולים</string>
+	<string>יהדות</string>
+	<string>לימוד</string>
+	<string>מדע בדיוני</string>
+	<string>מחשבים</string>
+	<string>פילוסופיה</string>
+	<string>פנטזיה</string>
+	<string>פסיכולוגיה</string>
+	<string>רומן</string>
+	<string>שירה</string>
+	<string>מתח</string>
+	<string>תזונה</string>
+	<string>הרפתקאות</string>
+</array>
+</plist>

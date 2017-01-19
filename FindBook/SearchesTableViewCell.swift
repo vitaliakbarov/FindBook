@@ -16,11 +16,12 @@ class SearchesTableViewCell: UITableViewCell {
     @IBOutlet weak var bookPriceLable: UILabel!
     @IBOutlet weak var bookGenre: UILabel!
     
-    static let identifier = "searchCell"
+    static let identifier = Constants.searchCellIdentifier
     // configure the cell
     func configure(name: String, price: String, url: URL, genre: String){
+        let formatedPrice =  AppManager.appManager.numberFormater(st: price)
         bookNameLable.text = name
-        bookPriceLable.text = "מחיר: " + price + " " + "שח"
+        bookPriceLable.text = "מחיר: " + formatedPrice
         bookGenre.text = genre
         bookImageView.sd_setImage(with: url)
         
@@ -36,5 +37,4 @@ class SearchesTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
-}
+   }

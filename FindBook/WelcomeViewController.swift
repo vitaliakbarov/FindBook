@@ -25,15 +25,14 @@ class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         pickerData = AppManager.appManager.getPickerData()
         self.pickerView(picker, didSelectRow: 0, inComponent: 0)
         picker.selectRow(18 * 15, inComponent: 0, animated: true)
-          //self.view.makeToast("hi", duration: 3, position: CSToastPositionCenter)
-        
+       
+       
     }
-    // logout user
+       // logout user
     @IBAction func logout(_ sender: UITapGestureRecognizer) {
         
         FBSDKAccessToken.current()
@@ -44,7 +43,7 @@ class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let firebaseAuth = FIRAuth.auth()
         do {
             try firebaseAuth?.signOut()
-             GoToStoryboard.storyboard.goTo(identifier: "main", viewController: self)
+             GoToStoryboard.storyboard.goTo(identifier: Constants.mainIdentifier, viewController: self)
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
             self.view.makeToast(signOutError.localizedDescription, duration: 4, position: CSToastPositionCenter)
@@ -55,7 +54,7 @@ class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBAction func searchForBooks(_ sender: Any) {
         
         
-        self.view.makeToast("hi", duration: 2, position: CSToastPositionTop)
+        
     }
     
     
@@ -67,7 +66,7 @@ class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     // pass the Genre that was selected
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "genre") {
+        if (segue.identifier == Constants.genreIdentifier) {
             
             let detailVC = segue.destination as! SearchedBooksViewController;
             detailVC.stringPassed = genre
@@ -96,6 +95,8 @@ class WelcomeViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let index = row % pickerData.count
         genre = pickerData[index]
     }
+    
+    
     
 }
 

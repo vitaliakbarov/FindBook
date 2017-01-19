@@ -48,7 +48,7 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
         if addButton.currentTitle == "עדכן"{
             var ref: FIRDatabaseReference!
             let bookIdToRemove = book?.bookId
-            ref = FIRDatabase.database().reference().child("books")
+            ref = FIRDatabase.database().reference().child(Constants.books)
             ref.child(bookIdToRemove!).removeValue()
         }
         self.dismiss(animated: true, completion: nil)
@@ -61,15 +61,15 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
         print("main")
         let imageName = NSUUID().uuidString
         let unicBookId = NSUUID().uuidString
-        let storageRef = FIRStorage.storage().reference().child("bookImages").child(self.uid!).child("\(imageName).png")
+        let storageRef = FIRStorage.storage().reference().child(Constants.bookImages).child(self.uid!).child("\(imageName).png")
         
         // get the picked image and upload this foto to DB 
         if let uploadData = UIImagePNGRepresentation(self.fotoImageView.image!){
-            print(uploadData)
-            print("upload data")
+            //print(uploadData)
+           // print("upload data")
             
             storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
-                print("put")
+               // print("put")
                 
                 if error != nil{
                     self.view.makeToast(error?.localizedDescription, duration: 4, position: CSToastPositionCenter)
@@ -78,7 +78,7 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
                 
                 if let imgUrl = metadata?.downloadURL()?.absoluteString{
                     AppManager.appManager.addBook(name: self.name!, price: self.price!, uid: self.uid!, janer: self.genre, imgUrl: imgUrl, unicBookId: unicBookId, phone: self.phoneNumber!)
-                    print("added")
+                   // print("added")
                 }
             })
         }
@@ -86,13 +86,13 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
     // get user phone number prom DB to save the contact phohe
     func getUserPhone() {
         var ref: FIRDatabaseReference!
-        ref = FIRDatabase.database().reference().child("users")
-        ref.queryOrdered(byChild: "id").queryEqual(toValue: uid).observe(.value, with: { snapshot in
+        ref = FIRDatabase.database().reference().child(Constants.users)
+        ref.queryOrdered(byChild: Constants.id).queryEqual(toValue: uid).observe(.value, with: { snapshot in
             if snapshot.value is NSNull {
-                print("phone number empty")
+               // print("phone number empty")
             } else {
                 for childSnap in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                    self.phoneNumber = childSnap.childSnapshot(forPath: "phone").value as? String
+                    self.phoneNumber = childSnap.childSnapshot(forPath: Constants.phone).value as? String
                 }
             }
         })
@@ -107,8 +107,8 @@ class AddBookViewController: UIViewController , UIPickerViewDelegate, UIPickerVi
         pickerController.maxSelectableCount = 1
         pickerController.singleSelect = true
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
-            print("didSelectAssets")
-            print(assets)
+           // print("didSelectAssets")
+           // print(assets)
             for asset in assets {
                 
                 asset.fetchOriginalImage(true, completeBlock: { (image, info) in

@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController , UITextFieldDelegate{
                     self.id = FIRAuth.auth()?.currentUser?.uid
                     AppManager.appManager.registerWith(phone: self.phone!, name: self.name!, uid: self.id!, email: self.email!)
                     
-                    GoToStoryboard.storyboard.goTo(identifier: "logged", viewController: self)
+                    GoToStoryboard.storyboard.goTo(identifier: Constants.loggedIdentifier, viewController: self)
                     
                 }
             })

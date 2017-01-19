@@ -30,8 +30,7 @@ class DetailsViewController: UIViewController {
     
      @IBAction func callToSeller(_ sender: UITapGestureRecognizer) {
      
-        print("tap")
-        
+ 
         guard let number = URL(string: "telprompt://" + book.phone!) else { return }
         UIApplication.shared.open(number, options: [:], completionHandler: nil)
 
@@ -50,9 +49,10 @@ class DetailsViewController: UIViewController {
     
     // init the fields
     func initBook()  {
+        let formatedPrice =  AppManager.appManager.numberFormater(st: book.price!)
         self.bookNameLable.text =  book.bookName
         self.bookGenreLable.text = book.genre
-        self.bookPriceLable.text = "מחיר: " + book.price! + " שח"
+        self.bookPriceLable.text = "מחיר: " + formatedPrice
         self.bookImageView.sd_setImage(with: book.image)
         self.bookSellerPhone.text = "טלפון: " + book.phone!
         
